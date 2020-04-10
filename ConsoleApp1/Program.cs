@@ -125,7 +125,7 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-            StreamMidiReader ReadMidi = new StreamMidiReader("ReadMidi.mid");
+            StreamMidiReader ReadMidi = new StreamMidiReader("..\\..\\..\\ReadMidi.mid");
 
             byte[,] k = new byte[,] { { 0, 0x90, 60, 120 }, { 60, 0x80, 60, 0 }, { 0, 0x90, 100, 120 }, { 60, 0x80, 100, 0 } };
 
@@ -137,12 +137,12 @@ namespace ConsoleApp1
 
             ReadMidi.Close();
 
-            StreamMidiWriter WriteMidi = new StreamMidiWriter("WriteMidi.mid", testMThd, testMTrk);
+            StreamMidiWriter WriteMidi = new StreamMidiWriter("..\\..\\..\\WriteMidi.mid", testMThd, testMTrk);
 
             WriteMidi.MakeMidi();
             WriteMidi.Close();
 
-            StreamMidiReader test = new StreamMidiReader("WriteMidi.mid");
+            StreamMidiReader test = new StreamMidiReader("..\\..\\..\\WriteMidi.mid");
             test.display();
             test.Close();
             
